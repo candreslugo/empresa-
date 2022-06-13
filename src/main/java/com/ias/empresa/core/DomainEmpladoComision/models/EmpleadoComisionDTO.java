@@ -11,8 +11,8 @@ public class EmpleadoComisionDTO extends EmpleadoDTO {
     private Integer montoPorCliente;
     private Integer salarioMinimo;
 
-    public EmpleadoComisionDTO(Integer ideEmpleado, String nombre, String apellido, LocalDate añoIngreso, Integer idemplaedoComision, Integer clientesCaptados, Integer montoPorCliente, Integer salarioMinimo) {
-        super(ideEmpleado, nombre, apellido, añoIngreso);
+    public EmpleadoComisionDTO(Integer ideEmpleado, String nombre, String apellido, int anoIngreso, Integer idemplaedoComision, Integer clientesCaptados, Integer montoPorCliente, Integer salarioMinimo) {
+        super(ideEmpleado, nombre, apellido, anoIngreso);
         this.idemplaedoComision = idemplaedoComision;
         this.clientesCaptados = clientesCaptados;
         this.montoPorCliente = montoPorCliente;
@@ -23,7 +23,12 @@ public class EmpleadoComisionDTO extends EmpleadoDTO {
 
     @Override
     public double getSalario() {
-        return 0;
+
+        double salario = montoPorCliente * clientesCaptados;
+        if (salario < salarioMinimo){
+            salario = salarioMinimo;
+        }
+        return salario;
     }
 
 

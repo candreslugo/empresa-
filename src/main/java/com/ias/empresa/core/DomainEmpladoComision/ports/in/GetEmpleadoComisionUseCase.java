@@ -5,6 +5,6 @@ import com.ias.empresa.core.DomainEmpladoComision.models.EmpleadoComisionDTO;
 
 public interface GetEmpleadoComisionUseCase extends UseCase<EmpleadoComisionDTO,EmpleadoComisionDTO> {
 
-
+    void getsalario();
 
 }

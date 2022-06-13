@@ -1,14 +1,15 @@
 package com.ias.empresa.core.DomainEmpleado.models;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public abstract class EmpleadoDTO {
     private Integer ideEmpleado;
     private String nombre;
     private String apellido;
-    private LocalDate añoIngreso;
+    private int añoIngreso;
 
-    public EmpleadoDTO(Integer ideEmpleado, String nombre, String apellido, LocalDate añoIngreso) {
+    public EmpleadoDTO(Integer ideEmpleado, String nombre, String apellido,int añoIngreso) {
         this.ideEmpleado = ideEmpleado;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -27,7 +28,10 @@ public abstract class EmpleadoDTO {
     public  abstract double getSalario();
 
 
-
+    public int antieguedadEmpleados(){
+        int anioActual = LocalDate.now().getYear();
+        return anioActual - añoIngreso;
+    }
 
     public Integer getIdeEmpleado() {
         return ideEmpleado;
@@ -53,11 +57,11 @@ public abstract class EmpleadoDTO {
         this.apellido = apellido;
     }
 
-    public LocalDate getAñoIngreso() {
+    public int getAñoIngreso() {
         return añoIngreso;
     }
 
-    public void setAñoIngreso(LocalDate añoIngreso) {
+    public void setAñoIngreso(int añoIngreso) {
         this.añoIngreso = añoIngreso;
     }
 }

@@ -1,15 +1,15 @@
-package com.ias.empresa.core.DomainEmpresa;
+package com.ias.empresa.core.DomainEmpresaServices;
 
 import com.ias.empresa.core.DomainEmpleado.models.EmpleadoDTO;
 
 
 import java.util.ArrayList;
 
-public class empresa {
+public class Empresa {
 
     private ArrayList<EmpleadoDTO> empleadoDTOS;
 
-    public empresa(){
+    public Empresa(){
         this.empleadoDTOS=new ArrayList<>();
     }
 

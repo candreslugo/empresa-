@@ -7,4 +7,10 @@ import java.util.List;
 public interface RepositoryEmpleadoSalario {
 
     List<EmpleadoSalarioDTO> getEmpleadoSalario();
+
+    void mostrarSlararios();
+
+    double getSalario();
+
+    double porcentajeAdicional();
 }
